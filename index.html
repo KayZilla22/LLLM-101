@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Syllabus – LIVING LIFE LIKE ME 101 (Carrie‑Core)</title>
+  <meta name="description" content="A playful, accessible, print‑ready syllabus for a lifestyle aesthetics course: rich‑people coffee shops, Carrie Bradshaw mindset, and the Amalfi Coast." />
+
+  <!-- =====================
+       COASTAL LUXE THEME (AA)
+       ===================== -->
+  <style>
+    :root{
+      /* Palette – modern luxury coastal */
+      --deep:#0a2540;         /* deep atlantic navy */
+      --ink:#1a2433;          /* elegant text */
+      --foam:#e9f3f2;         /* seafoam mist */
+      --shell:#fff8f2;        /* warm shell ivory */
+      --sand:#f3e7d8;         /* pale sand */
+      --surf:#b6d6d1;         /* muted aqua accent */
+      --reef:#5c8f88;         /* rich teal for emphasis */
+      --pearl:#ffffff;        /* pure white */
+      --slate:#5c6675;        /* muted text */
+
+      /* Effects */
+      --blur: 8px;
+      --radius-lg: 18px;
+      --radius-sm: 12px;
+      --shadow-soft: 0 10px 30px rgba(10,37,64,.08), 0 3px 10px rgba(10,37,64,.06);
+      --shadow-strong: 0 30px 60px rgba(10,37,64,.18);
+      --focus:#ffbf47; /* AA focus */
+
+      /* Typography scale */
+      --step--1: clamp(.9rem, .85rem + .2vw, 1rem);
+      --step-0: clamp(1rem, .95rem + .4vw, 1.125rem);
+      --step-1: clamp(1.25rem, 1.1rem + .9vw, 1.5rem);
+      --step-2: clamp(1.5rem, 1.25rem + 1.2vw, 1.9rem);
+      --step-3: clamp(2rem, 1.6rem + 2vw, 2.6rem);
+    }
+
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font: var(--step-0)/1.65 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 600px at 100% -10%, rgba(182,214,209,.35), transparent 60%),
+        radial-gradient(1000px 500px at -10% 0%, rgba(243,231,216,.55), transparent 60%),
+        linear-gradient(180deg, var(--pearl), var(--foam));
+    }
+
+    a{color:var(--reef); text-decoration:none; position:relative}
+    a:visited{color:var(--reef)}
+    a::after{content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px; background:linear-gradient(90deg, var(--reef), var(--surf)); transform:scaleX(0); transform-origin:left; transition:transform .25s ease}
+    a:hover::after{transform:scaleX(1)}
+    *:focus-visible{outline:3px solid var(--focus); outline-offset:3px}
+
+    /* Skip link */
+    .skip-link{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden}
+    .skip-link:focus{position:fixed; left:1rem; top:1rem; width:auto; height:auto; padding:.6rem .8rem; background:var(--focus); color:#000; border-radius:8px; z-index:1000}
+
+    /* ===== Layout ===== */
+    .wrap{max-width:1100px; margin:auto; padding:28px}
+
+    header{
+      background:
+        linear-gradient(180deg, rgba(10,37,64,.08), rgba(10,37,64,0) 60%),
+        linear-gradient(180deg, var(--shell), var(--pearl));
+      border-bottom:1px solid rgba(10,37,64,.06);
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* Decorative wave */
+    header::after{
+      content:""; position:absolute; inset:auto -10% -1px -10%; height:120px;
+      background: radial-gradient(120% 100% at 50% 0%, var(--foam), transparent 70%), linear-gradient(90deg, rgba(182,214,209,.6), rgba(243,231,216,.6));
+      filter:blur(14px); opacity:.8;
+    }
+
+    .hero{display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; padding:42px 24px; align-items:center}
+    .badge{display:inline-block; background:rgba(255,255,255,.7); backdrop-filter: blur(var(--blur)); border:1px solid rgba(10,37,64,.08); padding:6px 12px; border-radius:999px; font-weight:700; letter-spacing:.02em}
+    h1{font-size:var(--step-3); line-height:1.08; margin:.25rem 0 .5rem; letter-spacing:.01em}
+    .tagline{color:var(--slate); font-size:var(--step-0)}
+
+    figure{margin:0}
+    figure img{width:100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); border:1px solid rgba(10,37,64,.08)}
+    figcaption{font-size:var(--step--1); color:var(--slate); margin-top:.5rem}
+
+    main{padding:28px 24px 40px}
+    section{background: linear-gradient(180deg, var(--pearl), rgba(255,255,255,.92)); border:1px solid rgba(10,37,64,.06); border-radius: var(--radius-lg); padding:22px; margin:18px 0; box-shadow: var(--shadow-soft)}
+    h2{margin:.2rem 0 1rem; font-size:var(--step-2)}
+    h3{margin:1rem 0 .35rem; font-size:var(--step-1)}
+    p{margin:.5rem 0 1rem}
+    ul{padding-left:1.1rem; margin:.25rem 0 1rem}
+
+    .grid-2{display:grid; grid-template-columns:1fr; gap:16px}
+    @media (min-width: 800px){ .grid-2{grid-template-columns:1fr 1fr} }
+
+    .pill{background:linear-gradient(180deg, var(--pearl), var(--foam)); border:1px solid rgba(10,37,64,.08); padding:14px 16px; border-radius: var(--radius-sm); box-shadow: var(--shadow-soft)}
+    .callout{border-left:5px solid var(--reef); background:linear-gradient(90deg, rgba(182,214,209,.18), rgba(255,255,255,.8)); padding:14px 16px; border-radius:12px}
+
+    /* Fancy separators */
+    .divider{height:1px; background:linear-gradient(90deg, transparent, rgba(10,37,64,.15), transparent); margin:18px 0}
+
+    /* Tables */
+    table{width:100%; border-collapse:separate; border-spacing:0; background:var(--pearl); border:1px solid rgba(10,37,64,.08); border-radius:14px; overflow:hidden; box-shadow: var(--shadow-soft)}
+    th, td{padding:12px 12px; border-bottom:1px solid rgba(10,37,64,.06); text-align:left}
+    thead th{background:linear-gradient(180deg, var(--foam), var(--pearl)); font-weight:700}
+    tbody tr:last-child td{border-bottom:0}
+    caption{caption-side:top; text-align:left; font-weight:800; padding:10px 12px}
+
+    /* Buttons (if you add any) */
+    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.7rem 1rem; border-radius:999px; background:linear-gradient(180deg, var(--reef), #3f6f6a); color:#fff; border:1px solid rgba(10,37,64,.1); box-shadow: var(--shadow-strong); text-decoration:none}
+    .btn:hover{transform:translateY(-1px)}
+
+    /* Footer */
+    footer{padding:28px; color:var(--slate)}
+
+    /* Motion */
+    @media (prefers-reduced-motion: no-preference){
+      header, section{animation: rise .6s ease both}
+      @keyframes rise{from{opacity:0; transform: translateY(8px)} to{opacity:1; transform:none}}
+    }
+
+    /* Print styles – elegant and clean */
+    @media print{
+      header .hero figure{display:none}
+      header, .skip-link{display:none}
+      body{background:#fff}
+      section{break-inside:avoid; box-shadow:none}
+      a[href^="http"]::after{content:" (" attr(href) ")"; word-break:break-all}
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="wrap hero" role="banner">
+      <div>
+        <span class="badge" aria-label="Course code and term">LLLM 101 · Fall</span>
+        <h1>LIVING LIFE LIKE ME 101</h1>
+        <p class="tagline">Rich‑people coffee shops, Carrie Bradshaw mindset, and jet‑set joy — with an accessible, real‑world budget.</p>
+      </div>
+      <figure aria-labelledby="figcap-hero">
+        <img src="images/hero.jpg" alt="Sunlit cappuccino on a marble café table with a planner and sunglasses" />
+        <figcaption id="figcap-hero" class="tagline">A vibe: third‑wave café, clean lines, main‑character energy.</figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <!-- Main syllabus sections -->
+  <main id="content" class="wrap" role="main">
+
+    <section aria-labelledby="about">
+      <h2 id="about">Course Snapshot</h2>
+      <div class="grid-2" style="grid-template-columns:1fr 1fr">
+        <div class="pill">
+          <h3>Instructor</h3>
+          <p><strong>Kayla Davis</strong><br />Office Hours: Wed 2–4pm (Zoom or café chat)<br />Email: <a href="#">kayla.d.davis@bellevuecollege.edu</a></p>
+        </div>
+        <div class="pill">
+          <h3>Meeting Info</h3>
+          <p>Hybrid · Weekly module + Saturday field assignment (local café or neighborhood)</p>
+        </div>
+        <div class="pill">
+          <h3>Prerequisites</h3>
+          <p>Open mind, comfy shoes, notes app, and a reusable water bottle.</p>
+        </div>
+        <div class="pill">
+          <h3>Materials</h3>
+          <ul>
+            <li>Notebook or digital journal</li>
+            <li>Smartphone camera (for moodboards)</li>
+            <li>Transit card / rideshare budget (field trips)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout" role="note">
+        <strong>Course Description.</strong> This class blends lifestyle design with accessible luxury. We’ll study café culture, the Carrie Bradshaw writing mindset, travel planning (hello, Amalfi Coast), personal finance for big dreams, and everyday rituals that make life feel cinematic — all through an inclusive, realistic lens.
+      </div>
+    </section>
+
+    <section aria-labelledby="outcomes">
+      <h2 id="outcomes">Learning Outcomes</h2>
+      <ul>
+        <li>Curate café experiences using accessibility‑friendly checklists (noise, seating, menus, Wi‑Fi, outlets).</li>
+        <li>Develop a personal “Carrie‑core” writing ritual and publish two polished lifestyle essays.</li>
+        <li>Plan an inclusive, budget‑aware luxury trip to the <em>Amalfi</em> Coast (or your dream city), with alt options.</li>
+        <li>Build a moodboard & mini‑brand kit (colors, fonts, textures) that reflects your authentic aesthetic.</li>
+        <li>Create a 30‑day micro‑ritual plan that elevates daily life without overspending.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="grading">
+      <h2 id="grading">Assessments & Grading</h2>
+      <table aria-describedby="grading-notes">
+        <caption>Grade Breakdown</caption>
+        <thead>
+          <tr><th scope="col">Assessment</th><th scope="col">Description</th><th scope="col">Weight</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Café Field Notes</td><td>Three café visits using the Accessibility Café Checklist + 1 photo each with alt text.</td><td>20%</td></tr>
+          <tr><td>Carrie‑Core Essays</td><td>Two 500–700 word personal essays; one must include a reflective budget note.</td><td>20%</td></tr>
+          <tr><td>Travel Plan: Amalfi Edition</td><td>Four‑day itinerary with accessible lodging/transport options and tiered budgets.</td><td>25%</td></tr>
+          <tr><td>Moodboard & Mini‑Brand</td><td>Palette (hex codes), fonts, and 6‑tile moodboard with alt text + rationale.</td><td>15%</td></tr>
+          <tr><td>Final: 30‑Day Ritual Plan</td><td>Daily micro‑rituals + accountability tracker; includes inclusive alternatives.</td><td>20%</td></tr>
+        </tbody>
+      </table>
+      <p id="grading-notes" class="tagline">Passing requires 70% overall. Late work accepted within 7 days with a brief reflection (−10%).</p>
+    </section>
+
+    <section aria-labelledby="schedule">
+      <h2 id="schedule">Weekly Schedule</h2>
+      <table>
+        <thead>
+          <tr><th scope="col">Week</th><th scope="col">Theme</th><th scope="col">Focus & Deliverable</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Main‑Character Energy</td><td>Daily rituals, intention setting; deliverable: 1‑page lifestyle intent.</td></tr>
+          <tr><td>2</td><td>Third‑Wave Café 101</td><td>Accessibility Café Checklist; deliverable: Field Notes #1.</td></tr>
+          <tr><td>3</td><td>Carrie Bradshaw Mindset</td><td>Voice, structure, and ethics; deliverable: Essay Draft #1.</td></tr>
+          <tr><td>4</td><td>Wardrobe & Vibe (on a Budget)</td><td>Capsule kit; deliverable: 6‑tile moodboard v1.</td></tr>
+          <tr><td>5</td><td>Micro‑Luxury, Macro‑Kindness</td><td>Gratitude + community; deliverable: Field Notes #2.</td></tr>
+          <tr><td>6</td><td>Travel: Amalfi Coast</td><td>Itinerary scaffolding; deliverable: lodging & transport matrix.</td></tr>
+          <tr><td>7</td><td>Travel: Budgets & Tiers</td><td>Back‑up plans, alt‑routes; deliverable: Trip budget (3 tiers).</td></tr>
+          <tr><td>8</td><td>Photography & Alt Text</td><td>Story via images; deliverable: Moodboard v2 (with alt text).</td></tr>
+          <tr><td>9</td><td>Essay Polishing</td><td>Peer edit; deliverable: Final Essay #2.</td></tr>
+          <tr><td>10</td><td>30‑Day Ritual Plan</td><td>Assemble final; deliverable: Ritual plan + tracker.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="policies">
+      <h2 id="policies">Key Policies</h2>
+      <h3>Accessibility & Inclusion</h3>
+      <p>We design for everyone. Request accommodations anytime; materials are provided in accessible formats. Images include alt text; videos include captions. If you spot a barrier, tell me and we’ll fix it fast.</p>
+      <h3>Community Guidelines</h3>
+      <ul>
+        <li>Be kind, curious, and credit sources and creators.</li>
+        <li>No gatekeeping — luxury is a feeling we can all access.</li>
+        <li>Feedback = specific, actionable, respectful.</li>
+      </ul>
+      <h3>Academic Integrity</h3>
+      <p>Share inspiration, not plagiarism. Cite outfits, images, and itineraries you reference.</p>
+    </section>
+
+    <section aria-labelledby="resources">
+      <h2 id="resources">Resources</h2>
+      <ul>
+        <li><strong>Budget Tools:</strong> Simple spreadsheet + sinking funds template (provided in LMS).</li>
+        <li><strong>Café Map:</strong> Local list with noise level, step‑free access, and outlets annotated.</li>
+        <li><strong>Travel Access:</strong> Links to accessible stays and transit tips for the Amalfi Coast.</li>
+      </ul>
+      <div class="callout" role="note">
+        <strong>Safety Note.</strong> Field work is daylight‑first. Share location with a buddy, hydrate, and mind your budget.
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="wrap" role="contentinfo">
+    © LLLM 101 · This is a fictional syllabus for learning and vibes. Designed access‑first with semantic HTML and print styles.
+  </footer>
+</body>
+</html>
